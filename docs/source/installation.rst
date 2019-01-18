@@ -79,6 +79,8 @@ Build Options
 +-------------------------+-------------------+---------------+
 | CMAKE_BUILD_TYPE        | CMake build types | Debug         |
 +-------------------------+-------------------+---------------+
+| ArrayFire_DIR           | Path to ArrayFire |               |
++-------------------------+-------------------+---------------+
 
 
 Building on Linux or MacOS
@@ -92,6 +94,8 @@ Building on Linux and MacOS is simple:
   # in the flashlight project directory:
   mkdir -p build
   cd build
+  # Note: If you have done a local custom build/install of AF, you can specify the install path with ArrayFire_DIR : 
+  # example: if you built and installed AF in /tmp/AF add -DArrayFire_DIR=/tmp/AF/share/ArrayFire/cmake/
   cmake .. -DCMAKE_BUILD_TYPE=Release -DFLASHLIGHT_BACKEND=[backend] # valid backend
   make -j4  # (or any number of threads)
   make test
